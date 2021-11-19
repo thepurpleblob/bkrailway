@@ -19,8 +19,14 @@ export default {
 </script>
 
 <style>
+  @font-face {
+      font-family: "MoMA Sans Web Medium";
+      font-display: auto;
+      src: local("MoMA Sans Web Medium"), url("assets/fonts/Moma.woff");
+  }
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "MoMA Sans Web Medium";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

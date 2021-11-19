@@ -1,5 +1,14 @@
 <template>
   <div class="content">
+
+        <div v-if="banner.Enable" id="frontpagebanner" class="rounded shadow bg-secondary text-light">
+            <div class="text-center row gx-4 mt-4" >
+                <div class="col-12 p-4">
+                    <span v-html="banner.Text"></span>
+                </div>   
+            </div>
+        </div>
+
       <div v-for="pageitem in pageitems" :key="pageitem._id" >
           <div v-if="pageitem.evenblock" class="fp-block rounded shadow" :style="pageitem.style">
                 <div class="row gx-4 mt-4" >
@@ -37,6 +46,7 @@ export default {
   data:function() {
       return {
           pageitems: null,
+          banner: null,
           wwwroot: '',
       }
   },
@@ -46,6 +56,8 @@ export default {
         this.wwwroot = process.env.VUE_APP_ROOT
 
         const v = this
+
+        // front page blocks
         axios.get(api + 'collections/get/FrontPageItems?token=' + token)
         .then(response => {
             v.pageitems = response.data.entries
@@ -55,6 +67,12 @@ export default {
                 pageitem.evenblock = evenblock
                 evenblock = !evenblock
             })
+        })
+
+        // front page banner
+        axios.get(api + 'singletons/get/FrontPageBanner?token=' + token)
+        .then(response => {
+            v.banner = response.data
         })
   }
 }
