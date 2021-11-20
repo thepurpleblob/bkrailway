@@ -2,18 +2,21 @@
   <div id="app" class="container">
     <HeaderNav></HeaderNav>
     <Content></Content>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import HeaderNav from './components/HeaderNav.vue'
 import Content from './components/Content.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderNav,
-    Content
+    Content,
+    Footer
   }
 }
 </script>

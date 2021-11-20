@@ -1,36 +1,40 @@
 <template>
   <div class="content">
 
-        <div v-if="banner.Enable" id="frontpagebanner" class="rounded shadow bg-secondary text-light">
-            <div class="text-center row gx-4 mt-4" >
-                <div class="col-12 p-4">
+        <div v-if="banner.Enable" id="frontpagebanner" class="card text-center mt-4 rounded shadow bg-secondary text-light">
+            <div class="card-body" >
+                <div class="card-text">
                     <span v-html="banner.Text"></span>
                 </div>   
             </div>
         </div>
 
       <div v-for="pageitem in pageitems" :key="pageitem._id" >
-          <div v-if="pageitem.evenblock" class="fp-block rounded shadow" :style="pageitem.style">
-                <div class="row gx-4 mt-4" >
-                    <div class="col-12 col-sm-6 p-4">
-                        <h2>{{ pageitem.Heading }}</h2>
-                        <span v-html="pageitem.Content"></span>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <img :src="wwwroot + pageitem.Image.path" class="img-fluid rounded float-end" />
-                    </div>    
-                </div>
+          <div v-if="pageitem.evenblock" class="card mt-4 fp-block rounded shadow" :style="pageitem.style">
+              <div class="row g-0" >
+                  <div class="col-12 col-sm-6">
+                      <div class="card-body">
+                          <h2 class="card-title">{{ pageitem.Heading }}</h2>
+                              <p class="card-text"><span v-html="pageitem.Content"></span></p>
+                          </div>
+                      </div>
+                  <div class="col-12 col-sm-6">
+                      <img :src="wwwroot + pageitem.Image.path" class="img-fluid rounded float-end" />
+                  </div>    
+              </div>
           </div>
-            <div v-else class="fp-block mt-1 rounded shadow" :style="pageitem.style">
-                <div class="row gx-4 mt-4" >
-                    <div class="col-12 col-sm-6">
-                        <img :src="wwwroot + pageitem.Image.path" class="img-fluid rounded float-start" />
-                    </div> 
-                    <div class="col-12 col-sm-6 p-4">
-                        <h2>{{ pageitem.Heading }}</h2>
-                        <span v-html="pageitem.Content"></span>
-                    </div>   
-                </div>
+          <div v-else class="card mt-4 fp-block rounded shadow" :style="pageitem.style">
+              <div class="row g-0" >
+                  <div class="col-12 col-sm-6">
+                      <img :src="wwwroot + pageitem.Image.path" class="img-fluid rounded float-start" />
+                  </div> 
+                  <div class="col-12 col-sm-6">
+                      <div class="card-body">
+                          <h2 class="card-title">{{ pageitem.Heading }}</h2>
+                          <p class="card-text"><span v-html="pageitem.Content"></span></p>
+                      </div>
+                  </div>   
+              </div>
           </div>
       </div>
   </div>
@@ -79,12 +83,5 @@ export default {
 </script>
 
 <style lang="sass">
-    $fp-block-height: 400px
-
-    .fp-block 
-        height: $fp-block-height
-
-        img
-            height: $fp-block-height
     
 </style>
