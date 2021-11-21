@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Content from '@/components/Content.vue'
 import Page from '@/components/Page.vue'
+import SinglePage from '@/components/SinglePage.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/page/:slug',
     name: 'Page',
     component: Page
+  },
+  {
+    path: '/singlepage/:slug',
+    name: 'SinglePage',
+    component: SinglePage
   },
   {
     path: '/about',

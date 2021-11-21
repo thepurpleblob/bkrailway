@@ -1,7 +1,7 @@
 <template>
   <div class="content">
 
-        <div v-if="banner.Enable" id="frontpagebanner" class="card text-center mt-4 rounded shadow bg-secondary text-light">
+        <div v-if="banner && banner.Enable" id="frontpagebanner" class="card text-center mt-4 rounded shadow bg-secondary text-light">
             <div class="card-body" >
                 <div class="card-text">
                     <span v-html="banner.Text"></span>

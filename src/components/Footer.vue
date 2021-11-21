@@ -20,16 +20,16 @@
             </div>
             <div class="row gx-4 mt-4" >
                 <div class="col p-4 text-start">
-                    <a class="link-light text-decoration-none" href="#"><small>Terms & Conditions</small></a>
+                    <router-link class="link-light text-decoration-none" to="/singlepage/terms"><small>Terms & Conditions</small></router-link>
                 </div>   
                 <div class="col p-4 text-start">
-                    <a class="link-light text-decoration-none" href="#"><small>Data protection policy</small></a>
+                    <router-link class="link-light text-decoration-none" to="/singlepage/privacy"><small>Data protection policy</small></router-link>
                 </div> 
                 <div class="col p-4 text-start">
-                    <a class="link-light text-decoration-none" href="#"><small>Company details</small></a>
+                    <router-link class="link-light text-decoration-none" to="/singlepage/company"><small>Company details</small></router-link>
                 </div> 
                 <div class="col p-4 text-start">
-                    <a class="link-light text-decoration-none" href="#"><small>SRPS</small></a>
+                    <a class="link-light text-decoration-none" href="https://www.srps.org.uk/"><small>SRPS</small></a>
                 </div> 
             </div>
         </div>
