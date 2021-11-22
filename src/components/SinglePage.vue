@@ -19,7 +19,6 @@ function update(v) {
     // front page banner
     axios.get(api + 'singletons/get/' + slug + '?token=' + token)
     .then(response => {
-        window.console.log(response)
         v.content = response.data.Content
     })
     .catch(error => {
