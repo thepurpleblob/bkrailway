@@ -19,6 +19,7 @@
 </script>
 
 
-<style lang="scss">
-
+<style lang="sass">
+    html  
+        background-color: #000
 </style>
